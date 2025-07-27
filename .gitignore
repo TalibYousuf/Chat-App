@@ -1,2 +1,26 @@
 node_modules
 .env
+*.log
+npm-debug.log*
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+.cache/
+
+# npm/yarn cache
+.npm/
+.pnpm/
+
+# Vite/React specific
+*.local
+*.env.*
+!.env
