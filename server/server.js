@@ -64,12 +64,11 @@ console.log("Mongo URI being used:", process.env.MONGODB_URI);
 await connectDB();
 
 
-
-
 const PORT=process.env.PORT || 4000;
 
-server.listen(PORT , ()=>
-    console.log("server is running on port " + PORT)
-);
-
-
+if(process.env.NODE_ENV !== "production"){
+    server.listen(PORT , ()=>
+    console.log("server is running on port " + PORT));
+}
+//export server for vercel
+export default server;
