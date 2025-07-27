@@ -21,6 +21,10 @@ app.use(cors());//all urls will be connected to backend
 app.use("/api/auth",userRouter);
 app.use("/api/messages",messageRouter);
 
+app.use('/api/status', (req, res) => {
+    res.send("server is live");
+});
+
 // process.nextTick(() => {
 //     if (app._router && app._router.stack) {
 //         app._router.stack.forEach((r) => {
