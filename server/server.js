@@ -20,6 +20,9 @@ app.use(cors());//all urls will be connected to backend
 
 app.use("/api/auth",userRouter);
 app.use("/api/messages",messageRouter);
+app.use('/api/status', (req, res) => {
+    res.send("server is live");
+});
 
 app.use('/api/status', (req, res) => {
     res.send("server is live");
@@ -70,9 +73,11 @@ await connectDB();
 
 const PORT=process.env.PORT || 4000;
 
+
 if(process.env.NODE_ENV !== "production"){
     server.listen(PORT , ()=>
     console.log("server is running on port " + PORT));
 }
 //export server for vercel
 export default server;
+
